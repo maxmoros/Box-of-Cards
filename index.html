@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    const queryString = window.location.href;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams);
+    const uid = urlParams.get('uid')
+    const pid = urlParams.get('pid')
+    console.log(`uid : ${uid}`);
+    console.log(`pid : ${pid}`);
+    if (uid != null && pid != null)
+      document.getElementById('urlThumb').content = `https://firebasestorage.googleapis.com/v0/b/vestiq-max.appspot.com/o/posts%2F${uid}%2F${pid}%2Furl_thumb.jpg?alt=media`;
+  </script>
+  <meta property="og:image" id='urlThumb' content="https://firebasestorage.googleapis.com/v0/b/vestiq-max.appspot.com/o/default%2FVESTIQWHITESAGEFINAL.png?alt=media"/>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Get Dressed. Better than you ever have">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="VESTIQ">
+  <meta name="google-signin-client_id" content="210822867784-6vnqj19ufss7a7t2veqvctpj838ujjnf.apps.googleusercontent.com">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+  <title>VESTIQ</title>
+  <link rel="manifest" href="manifest.json">
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3656965711013956');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3656965711013956&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Pinterest Tag -->
+		<script>
+      !function(e){if(!window.pintrk){window.pintrk = function () {
+      window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+      pintrk('load', '2612538209215', {em: '<user_email_address>'});
+      pintrk('page');
+      </script>
+      <noscript>
+      <img height="1" width="1" style="display:none;" alt=""
+      src="https://ct.pinterest.com/v3/?event=init&tid=2612538209215&pd[em]=<hashed_email_address>&noscript=1" />
+      </noscript>
+      <!-- end Pinterest Tag -->
+      <script>
+      pintrk('track', 'pagevisit');
+      </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151369971-1">
+      </script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151369971-1');
+      </script>
+</head>
+<body id="app-container">
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyC50o5W_SUvJvGzTKTEBmjIyMWjhg8egNw",
+      authDomain: "vestiq-max.firebaseapp.com",
+      databaseURL: "https://vestiq-max.firebaseio.com",
+      projectId: "vestiq-max",
+      storageBucket: "vestiq-max.appspot.com",
+      messagingSenderId: "210822867784",
+      appId: "1:210822867784:web:7c8f842fa8996e72d8617d",
+      measurementId: "G-3HVRVTM3XR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="main.dart.js?version=211" type="application/javascript"></script>
+</body>
+</html>
